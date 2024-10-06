@@ -16,6 +16,10 @@ pub fn fits<const N: usize>(word: &[u8], set: &[u8]) -> bool
 where
     LaneCount<N>: SupportedLaneCount,
 {
+    if word.is_empty() {
+        return set.is_empty();
+    }
+
     // Check if a word contains a character.
     #[inline]
     fn word_contains_char<const N: usize>(word: &[u8], ch: u8) -> bool
