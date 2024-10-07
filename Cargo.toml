@@ -6,4 +6,9 @@ authors = ["flippette <me@flippo.cc>"]
 license = "Unlicense"
 
 [dev-dependencies]
+criterion = "0.5"
 proptest = "1.5"
+
+[[bench]]
+name = "fits"
+harness = false
